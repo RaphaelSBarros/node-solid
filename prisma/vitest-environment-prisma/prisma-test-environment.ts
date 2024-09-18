@@ -23,7 +23,7 @@ function generateDatabaseURL(schema: string) {
 export default <Environment>{
   name: 'prisma',
   transformMode: 'ssr',
-  setup() {
+  async setup() {
     const schema = randomUUID()
     const databaseURL = generateDatabaseURL(schema)
 
@@ -37,7 +37,7 @@ export default <Environment>{
           `DROP SCHEMA IF EXISTS "${schema}" CASCADE`,
         )
 
-        await prisma.$disconnect
+        await prisma.$disconnect()
       },
     }
   },
