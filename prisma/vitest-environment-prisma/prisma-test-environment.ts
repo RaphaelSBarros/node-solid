@@ -16,7 +16,6 @@ function generateDatabaseURL(schema: string) {
 
   url.searchParams.set('schema', schema)
 
-  console.log(url.toString())
   return url.toString()
 }
 
