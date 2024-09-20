@@ -27,7 +27,7 @@ describe('Refresh Token (e2e)', () => {
 
     const response = await request(app.server)
       .patch('/token/refresh')
-      .set('Cookie', cookies)
+      .set('Cookie', cookies as string[])
       .send()
 
     expect(response.statusCode).toEqual(200)
